@@ -61,7 +61,6 @@ Code: pizza1 = new Pizza();
       pizza1.addTopping(["Pepperoni", 1.5]);
       console.log(pizza1.getPrice());
 Expected Output: 2.5
-
 ```
 
 
