@@ -17,6 +17,48 @@ universalToppingPriceDatabase = {
   bananna_peppers:.5
 }
 
+//UI Utilities
+function subtractFromSelectBox(name){
+  $("#"+name).remove();
+}
+function addToSelectBox(name, cost){
+  $("#topping").append("<option id='"+ name +"' value='"+ name + "," + cost +"'>"+ name +"</option>");
+}
+function loadToppingList(){
+  for(let i in universalToppingPriceDatabase){
+    addToSelectBox(i,universalToppingPriceDatabase[i]);
+  }
+}
+function updateMods(pizza){
+  let output = '';
+  for(let i=0; i < pizza.toppings.length; i++){
+    output = output + "<li id=list'" + pizza.toppings[i][0] + "'>" + pizza.toppings[i][0] + "</li>"
+  }
+  $("#modifications").html(output);
+}
+//UI logic
+
+$(document).ready(function(){
+  loadToppingList();
+  let pizza1 = new Pizza();
+  //temp line
+  pizza1.setSize(0);
+  //end of templine
+  $("#cost").text(pizza1.getPrice());
+  $("form").submit(function(event){
+    event.preventDefault();
+    let data = $("#topping").val().split(",");
+    data[1] = parseFloat(data[1]);
+    //add the topping to the pizza
+    pizza1.addTopping(data);
+    subtractFromSelectBox(data[0]);
+    updateMods(pizza1);
+    $("#cost").text(pizza1.getPrice());
+  });
+});
+
+
+//business objects
 function Pizza(){
   this.size = '';
   this.toppings = [];
