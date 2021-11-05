@@ -1,4 +1,4 @@
-universalPizzaConstant = 1;
+universalPizzaConstant = 5;
 universalToppingPriceDatabase = {
   pepperoni:1.0,
   sausage:1.0,
