@@ -8,7 +8,7 @@ universalToppingPriceDatabase = {
   steak:1.3,
   black_olives:0.5,
   mushrooms:0.5,
-  green_pepers:0.75,
+  green_peppers:0.75,
   onion:0.5,
   fresh_tomato:0.75,
   pineapple:1,
