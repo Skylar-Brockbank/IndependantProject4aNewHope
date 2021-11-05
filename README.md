@@ -40,7 +40,7 @@ Describe: Pizza()
 Test: It should return an object with properties named: Size, and Toppings
 Code: pizza1 = new Pizza();
       console.log(pizza1)
-Expected Output: {size: '', toppings: Array}
+Expected Output: {size: Array, toppings: Array}
 
 Describe: Pizza.prototype.setSize(size)
 Test: It should overwrite the current value of the size property with the size specified in the size parameter.
@@ -55,9 +55,12 @@ Code: pizza1.addTopping(["Pepperoni", 1.5]);
 Expected Output: {size: '', toppings: Array(1)}
 
 Describe: Pizza.prototype.GetPrice();
-Test:
-Code:
-Expected Output:
+Test: It should return the sum of all the 1 idicies of all of the arrays in pizza.toppings plus the pizza dough constant times the size.
+Code: pizza1 = new Pizza();
+      pizza1.setSize(0);
+      pizza1.addTopping(["Pepperoni", 1.5]);
+      console.log(pizza1.getPrice());
+Expected Output: 2.5
 
 ```
 
