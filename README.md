@@ -41,9 +41,18 @@ Test: It should return an object with properties named: Size, and Toppings
 Code: pizza1 = new Pizza();
       console.log(pizza1)
 Expected Output: {size: '', toppings: Array}
-Test:
-Code:
-Expected Output:
+
+Describe: Pizza.prototype.setSize(size)
+Test: It should overwrite the current value of the size property with the size specified in the size parameter.
+Code: pizza1.setSize(0);
+      console.log(pizza1.size);
+Expected Output: 0
+
+Describe: Pizza.prototype.addTopping(toppingData)
+Test: It should add an array to the toppings property of the pizza object
+Code: pizza1.addTopping(["Pepperoni", 1.5]);
+      console.log(pizza1);
+Expected Output: {size: '', toppings: Array(1)}
 
 Describe: Pizza.prototype.GetPrice();
 Test:
