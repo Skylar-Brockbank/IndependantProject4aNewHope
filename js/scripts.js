@@ -32,7 +32,7 @@ function loadToppingList(){
 function updateMods(pizza){
   let output = '';
   for(let i=0; i < pizza.toppings.length; i++){
-    output = output + "<li id=list'" + pizza.toppings[i][0] + "'><span class='delete' value='"+pizza.toppings[i][0]+"'>X </span>" + pizza.toppings[i][0] + "</li>"
+    output = output + "<li value='"+pizza.toppings[i][0]+"' id='list" + pizza.toppings[i][0] + "'><span class='delete' value='"+pizza.toppings[i][0]+"'> </span>" + pizza.toppings[i][0] + "</li>"
   }
   $("#modifications").html(output);
 }
@@ -56,10 +56,6 @@ $(document).ready(function(){
   $("#form2").click(function(){
     pizza1.setSize(parseInt($("input:radio[name=pizzaSize]:checked").val()));
     $("#cost").text(pizza1.getPrice().toFixed(2));
-  });
-  $(".delete").click(function(){
-    $("#"+this.val).remove();
-
   });
 });
 
