@@ -119,3 +119,6 @@ ul {
 li {
   font-weight: bold;
 }
+.delete {
+  color: red;
+}

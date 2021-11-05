@@ -32,7 +32,7 @@ function loadToppingList(){
 function updateMods(pizza){
   let output = '';
   for(let i=0; i < pizza.toppings.length; i++){
-    output = output + "<li id=list'" + pizza.toppings[i][0] + "'>" + pizza.toppings[i][0] + "</li>"
+    output = output + "<li id=list'" + pizza.toppings[i][0] + "'><span class='delete' value='"+pizza.toppings[i][0]+"'>X </span>" + pizza.toppings[i][0] + "</li>"
   }
   $("#modifications").html(output);
 }
@@ -42,7 +42,7 @@ $(document).ready(function(){
   loadToppingList();
   let pizza1 = new Pizza();
     pizza1.setSize(0);
-  $("#cost").text(pizza1.getPrice());
+  $("#cost").text(parseFloat(pizza1.getPrice())+".00");
   $("#form1").submit(function(event){
     event.preventDefault();
     let data = $("#topping").val().split(",");
@@ -56,6 +56,10 @@ $(document).ready(function(){
   $("#form2").click(function(){
     pizza1.setSize(parseInt($("input:radio[name=pizzaSize]:checked").val()));
     $("#cost").text(pizza1.getPrice().toFixed(2));
+  });
+  $(".delete").click(function(){
+    $("#"+this.val).remove();
+
   });
 });
 
@@ -81,4 +85,13 @@ Pizza.prototype.getPrice = function(){
   }
   output = (output+universalPizzaConstant)*(parseInt(this.size)+1);
   return output;
+}
+
+Pizza.prototype.removeTopping = function(toppingName){
+  for(let i=0; i<this.toppings.length;i++){
+    if(this.toppings[i][0]===toppingName){
+      this.toppings.splice(i,1);
+      break;
+    }
+  }
 }

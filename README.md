@@ -61,6 +61,16 @@ Code: pizza1 = new Pizza();
       pizza1.addTopping(["Pepperoni", 1.5]);
       console.log(pizza1.getPrice());
 Expected Output: 2.5
+
+Describe: Pizza.prototype.removeTopping()
+Test: It should remove a topping from the list of toppings
+Code: pizza1.addTopping(["Sauasage", 1.5]);
+      pizza1.addTopping(["Pepperoni", 1.5]);
+      pizza1.removeTopping("pepperoni");
+      pizza1.toppings.forEach(function(topping) {
+        console.log(topping[0]);
+      })
+Expected Output: "Sausage"
 ```
 
 
