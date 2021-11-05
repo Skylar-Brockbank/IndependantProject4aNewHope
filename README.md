@@ -32,3 +32,29 @@ _Placeholder_
 
 *[MIT](https://opensource.org/licenses/MIT) Licenced
 *Copyright (c) _2021_ _Skylar Brockbank_
+
+## Tests
+
+```
+Describe: Pizza()
+Test: It should return an object with properties named: Size, and Toppings
+Code: pizza1 = new Pizza();
+      console.log(pizza1)
+Expected Output: {size: '', toppings: Array}
+Test:
+Code:
+Expected Output:
+
+Describe: Pizza.prototype.GetPrice();
+Test:
+Code:
+Expected Output:
+
+```
+
+
+
+<!-- Describe:
+Test:
+Code:
+Expected Output: -->
