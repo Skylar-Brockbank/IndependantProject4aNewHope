@@ -3,6 +3,10 @@ function Pizza(){
   this.toppings = [];
 }
 
-Pizza.prototype.addToppings = function(toppingData) {
+Pizza.prototype.addTopping = function(toppingData) {
   this.toppings.push(toppingData);
+}
+
+Pizza.prototype.setSize = function(size) {
+  this.size = size;
 }
