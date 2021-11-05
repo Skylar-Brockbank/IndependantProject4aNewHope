@@ -51,11 +51,11 @@ $(document).ready(function(){
     pizza1.addTopping(data);
     subtractFromSelectBox(data[0]);
     updateMods(pizza1);
-    $("#cost").text(pizza1.getPrice());
+    $("#cost").text(pizza1.getPrice().toFixed(2));
   });
   $("#form2").click(function(){
-    pizza1.setSize(parseFloat($("input:radio[name=pizzaSize]:checked").val()));
-    $("#cost").text(pizza1.getPrice());
+    pizza1.setSize(parseInt($("input:radio[name=pizzaSize]:checked").val()));
+    $("#cost").text(pizza1.getPrice().toFixed(2));
   });
 });
 

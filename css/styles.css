@@ -1,31 +1,56 @@
+:root {
+  --notQWhite:rgb(255, 250, 241);
+  --sandStone:rgb(255, 235, 199);
+  --sandierStone: rgb(219, 189, 133);
+  --redBrick:rgb(95, 36, 28);
+  --redBlack:rgb(56, 20, 15);
+  --shadow:rgba(73, 63, 63, 0.575);
+}
+
 body{
-  background-color:rgb(255, 17, 0);
+  background-color:var(--redBlack);
   padding: none;
   box-sizing: border-box;
   margin: 0;
   display:block;
+  font-family:sans-serif;
 }
 .topBar {
-  background-color:rgb(179, 0, 0);
+  background-color:var(--redBrick);
   height: 2em;
   width: 100%;
   margin: 0;
   box-sizing: border-box;
 }
 .hero {
+  background-color:var(--shadow);
   width: 100%;
-  background-color:rgb(255, 153, 0);
   margin: 0;
   box-sizing: border-box;
   display: grid;
   justify-content:center;
   padding: 15vh;
+  color: var(--notQWhite);
+}
+.hero h1 {
+  font-size: 13vh;
+}
+.hero h4 {
+  font-size: 5vh;
+  letter-spacing: .2em;
+}
+.testLense{
+  width: 100%;
+  height:fit-content;
+  background-image: url(../img/pizza4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .hero h1,h4{
   justify-self: center;
 }
 .mainBody {
-  background-color: rgb(255, 225, 168);
+  background-color: var(--sandierStone);
   margin:  auto;
   width: 90%;
   box-sizing: border-box;
@@ -36,15 +61,15 @@ body{
   gap: 2%;
 }
 #customizationBox {
-  background-color: rgb(255, 244, 225);
+  background-color: var(--sandStone);
   border-radius: .25em;
   padding:1em;
 }
 #customizationBox h2 {
-  border-bottom: solid rgba(0, 0, 0, 0.178);
+  border-bottom: solid var(--shadow);
 }
 #pricingBox{
-  background-color: rgb(255, 244, 225);
+  background-color: var(--sandStone);
   border-radius: .25em;
   padding: 1em;
 }
@@ -87,4 +112,10 @@ body{
 }
 #form2 h3 {
   justify-self: center;
+}
+ul {
+  list-style-type: none;
+}
+li {
+  font-weight: bold;
 }
