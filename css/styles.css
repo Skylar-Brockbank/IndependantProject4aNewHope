@@ -19,7 +19,7 @@ body{
   box-sizing: border-box;
   display: grid;
   justify-content:center;
-  padding: 3vh;
+  padding: 15vh;
 }
 .hero h1,h4{
   justify-self: center;
@@ -38,9 +38,53 @@ body{
 #customizationBox {
   background-color: rgb(255, 244, 225);
   border-radius: .25em;
+  padding:1em;
+}
+#customizationBox h2 {
+  border-bottom: solid rgba(0, 0, 0, 0.178);
 }
 #pricingBox{
   background-color: rgb(255, 244, 225);
   border-radius: .25em;
   padding: 1em;
+}
+
+.styledRadioButton {
+  height: 2em;
+  width: 2em;
+  border: .15em solid orange;
+  margin-left:.1em;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
+
+.selected {
+  width: 80%;
+  height: 80%;
+  background-color: red;
+  border-radius: 50%;
+  align-self: center;
+  display:none;
+}
+
+.styledRadioButton input {
+  display: none;
+}
+
+.styledRadioButton input:checked+ .selected {
+  display: inline-block;
+}
+#form2 label{
+  margin-top: .5em;
+}
+
+#form2 {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+}
+#form2 h3 {
+  justify-self: center;
 }

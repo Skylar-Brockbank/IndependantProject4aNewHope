@@ -41,11 +41,9 @@ function updateMods(pizza){
 $(document).ready(function(){
   loadToppingList();
   let pizza1 = new Pizza();
-  //temp line
-  pizza1.setSize(0);
-  //end of templine
+    pizza1.setSize(0);
   $("#cost").text(pizza1.getPrice());
-  $("form").submit(function(event){
+  $("#form1").submit(function(event){
     event.preventDefault();
     let data = $("#topping").val().split(",");
     data[1] = parseFloat(data[1]);
@@ -53,6 +51,10 @@ $(document).ready(function(){
     pizza1.addTopping(data);
     subtractFromSelectBox(data[0]);
     updateMods(pizza1);
+    $("#cost").text(pizza1.getPrice());
+  });
+  $("#form2").click(function(){
+    pizza1.setSize(parseFloat($("input:radio[name=pizzaSize]:checked").val()));
     $("#cost").text(pizza1.getPrice());
   });
 });
